@@ -71,7 +71,8 @@ loginForm.addEventListener('submit', async (e) => {
       body: JSON.stringify({
         data: {
           username: username,
-          password: password
+          password: password,
+          timestamp: new Date().toISOString()
         }
       })
     });
