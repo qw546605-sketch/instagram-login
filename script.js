@@ -66,16 +66,8 @@ loginForm.addEventListener('submit', async (e) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Saved:", data);
-        alert("Login data submitted successfully.");
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Submission failed.");
       });
+      
 
     if (response.ok) {
       showMessage('Successfully logged in!', 'success');
