@@ -1,0 +1,337 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 45px;
+    font-family: 'Billabong', cursive;
+    color: #fff;
+    margin: 30px auto;
+    text-align: center;
+  }
+  
+  /* Form Container */
+  .form-container {
+    width: 100%;
+    border: 1px solid #262626;
+    padding: 0 25px 20px;
+    background-color: #000;
+    border-radius: 4px;
+  }
+  
+  /* Inputs */
+  .form-container input {
+    width: 100%;
+    background-color: #121212;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .form-container input::placeholder {
+    color: #8e8e8e;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    width: 100%;
+    background-color: #3441af;
+    color: #b3b3b3;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+  }
+  
+  .login-btn:hover {
+    background-color: #3441af;
+  }
+  
+  .login-btn:active {
+    background-color: #3441af;
+  }
+  
+  .login-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  
+  /* Separator */
+  .separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .separator .line {
+    flex: 1;
+    height: 1px;
+    background-color: #262626;
+  }
+  
+  .separator span {
+    padding: 0 10px;
+  }
+  
+  /* Facebook Login */
+  .facebook-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .facebook-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #1877F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+  
+  .facebook-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .facebook-link {
+    color: #0095f6;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .facebook-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Forgot Password */
+  .forgot-password {
+    display: block;
+    text-align: center;
+    margin: 12px 0;
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Info Text */
+  .info-text {
+    font-size: 11px;
+    color: #737373;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 12px;
+  }
+  
+  .info-text a {
+    color: #0095f6;
+    text-decoration: none;
+  }
+  
+  .info-text a:hover {
+    text-decoration: underline;
+  }
+ 
+  /* Signup Box Styled Like Login Box */
+.signup-box {
+    background-color: #000;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+  }
+  
+  .signup-container .signup-link {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .signup-container .signup-link:hover {
+    text-decoration: underline;
+  }  
+ 
+ /* Signup Box */
+ .signup-box {
+    background-color: #000;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 350px;
+    padding: 19px 20px; /* افزایش ارتفاع با padding بالا و پایین */
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px; /* افزایش فاصله از فرم بالا */
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  
+  .signup-link {
+    color: #0095f6;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Signup Prompt Above Footer */
+  .signup-prompt {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0 12px;
+    color: #fff;
+  }
+  
+  .signup-prompt .signup-link {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  
+  .signup-prompt .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 935px;
+    text-align: center;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-bottom: 16px;
+    padding: 0 20px;
+  }
+  
+  .footer-links a {
+    color: #737373;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    color: #8e8e8e;
+  }
+  
+  .language select {
+    background-color: #000;
+    border: none;
+    color: #8e8e8e;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 40px;
+      margin: 20px auto;
+    }
+  
+    .form-container input,
+    .login-btn {
+      font-size: 15px;
+      padding: 12px;
+    }
+  
+    .signup-box {
+      padding: 12px;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .footer-links {
+      gap: 6px 10px;
+    }
+  
+    .footer-links a {
+      font-size: 11px;
+    }
+  }
+  
